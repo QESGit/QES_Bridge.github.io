@@ -1,7 +1,6 @@
 # QES_Bridge.github.io
 Link Platform
-<h1>Hoşgeldin</h1>
-<p>Bu bir örnek sayfa.</p>
+
 
 <button class="btn blue"
         onclick="window.location.href='https://efinsan.qnbefinans.com/Login/Login'">
