@@ -1,84 +1,89 @@
 <!DOCTYPE html>
-<html>
+<html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <title>QES Bridge</title>
-    <style>
-        body {
-            margin: 0;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-            font-family: Arial, sans-serif;
-            color: white;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Buton Tasarım</title>
 
-        h1 {
-            margin-bottom: 40px;
-        }
+<style>
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    font-family: Arial, sans-serif;
+    color: white;
+}
 
-        .btn {
-            padding: 15px 40px;
-            margin: 10px;
-            font-size: 18px;
-            border: none;
-            border-radius: 12px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
+h1 {
+    margin-bottom: 40px;
+}
 
-        .btn:hover {
-            transform: scale(1.05);
-        }
+/* 🔥 Butonları yan yana dizen alan */
+.button-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
 
-        .blue { background-color: #3498db; }
-        .green { background-color: #2ecc71; }
-        .red { background-color: #e74c3c; }
-        .yellow { background-color: #f1c40f; }
-        .orange { background-color: #e67e22; }
-        .purple { background-color: #9b59b6; }
-        .pink { background-color: #fd79a8; }
-        .teal { background-color: #1abc9c; }
-        .cyan { background-color: #00cec9; }
-        .lime { background-color: #a4e83a; }
-        .brown { background-color: #8e6e53; }
-        .gray { background-color: #95a5a6; }
-        .darkgray { background-color: #2c3e50; }
-        .black { background-color: #000000; }
-        .white { background-color: #ffffff; }
-    </style>
+/* ✨ Cam + Glow efektli buton */
+.btn {
+    padding: 15px 40px;
+    font-size: 18px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    color: white;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px rgba(255,255,255,0.2);
+}
+
+.btn:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 0 25px rgba(255,255,255,0.6);
+}
+
+/* 🎨 Renkler */
+.blue { background-color: #3498db; }
+.green { background-color: #2ecc71; }
+.red { background-color: #e74c3c; }
+.yellow { background-color: #f1c40f; color: black; }
+.orange { background-color: #e67e22; }
+.purple { background-color: #9b59b6; }
+.pink { background-color: #fd79a8; }
+.teal { background-color: #1abc9c; }
+.cyan { background-color: #00cec9; }
+.lime { background-color: #a4e83a; color: black; }
+.brown { background-color: #8e6e53; }
+.gray { background-color: #95a5a6; }
+.darkgray { background-color: #2c3e50; }
+.black { background-color: #000000; }
+.white { background-color: #ffffff; color: black; }
+
+</style>
 </head>
+
 <body>
 
-    <h1>QES Bridge </h1>
+<h1>Renk Seçenekleri</h1>
 
-    <button class="btn blue"
-        onclick="window.location.href='https://efinsan.qnbefinans.com/Login/Login'">
-        Delta İnsan Kaynakları
-    </button>
-
-    <button class="btn green"
-        onclick="window.location.href='https://itam.efinans.com.tr/login'">
-        İtam
-    </button>
-
-    <button class="btn red"
-        onclick="window.location.href='https://uk.epm.cyberark.com/'">
-        CyberArk
-    </button>
-
-<button class="btn yellow"
-        onclick="window.location.href='http://10.81.224.162:1936'">
-        Haproxy Prod
-    </button>
-
-<button class="btn orange"
-        onclick="window.location.href='https://10.140.222.26'">
-        Octo
-    </button>
+<div class="button-group">
+    <button class="btn blue">Mavi<'https://itam.efinans.com.tr/login'">
+    <button class="btn green">Yeşil</button>
+    <button class="btn red">Kırmızı</button>
+    <button class="btn yellow">Sarı</button>
+    <button class="btn orange">Turuncu</button>
+    <button class="btn purple">Mor</button>
+    <button class="btn pink">Pembe</button>
+    <button class="btn teal">Teal</button>
+    <button class="btn cyan">Cyan</button>
+    <button class="btn lime">Lime</button>
+</div>
 
 </body>
 </html>
