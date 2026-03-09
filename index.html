@@ -14,7 +14,6 @@ body {
     justify-content: center;
     align-items: center;
     font-family: Arial, sans-serif;
-    color: test;
 }
 
 h1 {
@@ -40,6 +39,7 @@ h1 {
     box-shadow: 0 0 15px rgba(255,255,255,0.2);
     display: inline-block;
     font-weight: bold;
+    border: none;
 }
 
 .btn:hover {
@@ -47,71 +47,160 @@ h1 {
     box-shadow: 0 0 25px rgba(0,255,255,0.6);
 }
 
-/* 🎨 Renkler */
 .blue { background-color: #3498db; }
 .red { background-color: #e74c3c; }
-.test { background-color: #2b6bff; }
-.purple { background-color: #9b59b6; }
-.green { background-color: #2ecc71; }
-.orange { background-color: #e67e22; }
-.pink { background-color: #fd79a8; }
-.teal { background-color: #1abc9c; }
-.cyan { background-color: #00cec9; }
-.lime { background-color: #a4e83a; color: black; }
-.brown { background-color: #8e6e53; }
-.gray { background-color: #95a5a6; }
-.darkgray { background-color: #2c3e50; }
-.black { background-color: #000000; }
-.white { background-color: #ffffff; color: black; }
-.yellow { background-color: #f1c40f; color: black; }
-.green { background-color: #2ecc71; }
-.navy { background-color: #001f3f; }
-.indigo { background-color: #3f51b5; }
-.maroon { background-color: #800000; }
-.olive { background-color: #808000; }
-.turquoise { background-color: #40e0d0; }
-.gold { background-color: #ffd700; color: black; }
-.silver { background-color: #c0c0c0; color: black; }
-.beige { background-color: #f5f5dc; color: black; }
-.coral { background-color: #ff7f50; }
-.salmon { background-color: #fa8072; }
 .crimson { background-color: #dc143c; }
-.chocolate { background-color: #7b3f00; }
-.plum { background-color: #dda0dd; color: black; }
-.mint { background-color: #98ff98; color: black; }
-.skyblue { background-color: #87ceeb; color: black; }
-.lavender { background-color: #e6e6fa; color: black; }
-.peach { background-color: #ffcc99; color: black; }
-.mustard { background-color: #ffdb58; color: black; }
+.green { background-color: #2ecc71; }
+.brown { background-color: #8e6e53; }
+.darkgray { background-color: #2c3e50; }
+.purple { background:#8e44ad; }
+.orange { background:#e67e22; }
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown .btn::after {
+    content: " ▼";
+    font-size: 14px;
+}
+
+.dropdown-content {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    background: white;
+    min-width: 220px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+    overflow: hidden;
+    z-index: 999;
+    opacity: 0;
+    transform: translateX(-15px);
+    transition: all 0.25s ease;
+    pointer-events: none;
+}
+
+.dropdown::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 20px;
+    height: 100%;
+}
+
+.dropdown:hover .dropdown-content {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 12px 18px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.dropdown-content a:hover {
+    background: #f2f2f2;
+}
 </style>
 </head>
 
 <body>
 
-<h1 >QES Bridge</h1>
+<h1>QES Bridge</h1>
 
 <div class="button-group">
-    <a href="https://efinsan.qnbefinans.com/Login/Login" target="_blank" class="btn blue">QES İnsan Kaynakları</a>
-    <a href="https://itam.efinans.com.tr/login" class="btn red">QES ITAM</a>
-    <a href="https://uk.epm.cyberark.com" target="_blank" class="btn crimson">CyberArk</a>
-    <a href="http://10.81.224.162:1936" target="_blank" class="btn purple">HaProxy Prod</a>
-    <a href="https://10.140.222.26" target="_blank" class="btn green">Octo</a>
-    <a href="https://grafana.qnbefinans.com" target="_blank" class="btn orange">Grafana</a>
-    <a href="https://grfprd.qnb.com.tr" target="_blank" class="btn lavender">QNB Grafana (KEP)</a>
-    <a href="https://www.site24x7.eu" target="_blank" class="btn skyblue">Site 24/7</a>
-    <a href="https://portal.qnbesolutions.com.tr/yonetim/jsp/DvMYxjVuhkBZse2z6p9SaTXAmR7rNQ43fFCc8wnJ.jsp" target="_blank" class="btn turquoise">e-Fatura Monitör</a>
-    <a href="https://earsiv.efinans.com.tr/earsiv/yonetim/batchMonitor2532UtrE62.jsp" target="_blank" class="btn lime">e-Arşiv Monitör</a>
-    <a href="https://edefter.efinans.com.tr/edefter/jsp/SystemMonitor_cyb5ae17dyga521es.jsp?queues=true" target="_blank" class="btn pink">e-Defter Monitör</a>
-    <a href="https://qnbesolutions.atlassian.net" target="_blank" class="btn brown">Jira</a>
-    <a href="https://arc.qnbfinansbank.com" target="_blank" class="btn darkgray">Archer</a>
-    <a href="https://sdlc.ibtech.com.tr" target="_blank" class="btn teal">Frontline</a>
-    <a href="https://www.finarmoni.com.tr" target="_blank" class="btn cyan">Finarmoni</a>
-    <a href="http://10.140.50.61:30900/" target="_blank" class="btn test">Graylog</a>
-    <a href="https://esos.lightning.force.com" target="_blank" class="btn maroon">Salesforce</a>
-    <a href="https://euce1-108.sentinelone.net" target="_blank" class="btn yellow">Sentinel One</a>
-    <a href="https://usta.prodaft.com" target="_blank" class="btn black">Usta</a>
-    <a href="https://46.221.23.136/admin_ui/mas/ent/login.html" target="_blank" class="btn olive">Netscaler</a>
-    <a href="https://dt.qnbefinans.com" target="_blank" class="btn indigo">Dynatrace</a>
+
+<div class="dropdown">
+<div class="btn brown">Bulgu Takip</div>
+<div class="dropdown-content">
+<a href="https://arc.qnbfinansbank.com/" target="_blank">Archer</a>
+<a href="https://simm-ns.finansbank.com.tr/" target="_blank">SecFusion</a>
+</div>
+</div>
+
+<div class="dropdown">
+<div class="btn red">Firewall</div>
+<div class="dropdown-content">
+<a href="https://46.221.23.135/p/login/" target="_blank">Forti Analyzer</a>
+<a href="https://46.221.23.134/login?redir=%2Fng%2Ffirewall%2Fpolicy%2Fpolicy%2Fstandard" target="_blank">Forti Firewall</a>
+</div>
+</div>
+
+<div class="dropdown">
+<div class="btn orange">HaProxy</div>
+<div class="dropdown-content">
+<a href="http://10.81.224.161:1936/" target="_blank">HaProxy Prod1</a>
+<a href="http://10.81.224.162:1936/" target="_blank">HaProxy Prod2</a>
+<a href="http://10.81.224.71:1936/" target="_blank">HaProxy Prod3</a>
+<a href="http://10.81.233.233:1936/" target="_blank">HaProxy Test</a>
+</div>
+</div>
+
+<div class="dropdown">
+<div class="btn brown">Jira</div>
+<div class="dropdown-content">
+<a href="https://qnbesolutions.atlassian.net/" target="_blank">Jira</a>
+<a href="https://qnbesolutions.atlassian.net/wiki/spaces/" target="_blank">Confluence</a>
+</div>
+</div>
+
+<div class="dropdown">
+<div class="btn green">Linux</div>
+<div class="dropdown-content">
+<a href="https://landscape.qnbesolutions.com.tr/" target="_blank">Landscape</a>
+<a href="https://10.140.222.44/" target="_blank">Satellite</a>
+</div>
+</div>
+
+<div class="dropdown">
+<div class="btn purple">Monitoring</div>
+<div class="dropdown-content">
+<a href="https://grafana.qnbefinans.com/" target="_blank">Grafana</a>
+<a href="https://grfprd.qnb.com.tr/" target="_blank">QNB Grafana (KEP)</a>
+<a href="https://www.site24x7.eu/" target="_blank">Site 24/7</a>
+<a href="https://portal.qnbesolutions.com.tr/yonetim/jsp/DvMYxjVuhkBZse2z6p9SaTXAmR7rNQ43fFCc8wnJ.jsp" target="_blank">e-Fatura Monitor</a>
+<a href="https://earsiv.efinans.com.tr/earsiv/yonetim/batchMonitor2532UtrE62.jsp" target="_blank">e-Arşiv Monitor</a>
+<a href="https://edefter.efinans.com.tr/edefter/jsp/SystemMonitor_cyb5ae17dyga521es.jsp?queues=true" target="_blank">e-Defter Monitor</a>
+<a href="https://usta.prodaft.com/" target="_blank">Usta</a>
+<a href="https://dt.qnbefinans.com/" target="_blank">Dynatrace</a>
+</div>
+</div>
+
+<div class="dropdown">
+<div class="btn blue">QES Envanter</div>
+<div class="dropdown-content">
+<a href="https://itam.efinans.com.tr/login" target="_blank">ITAM</a>
+<a href="https://euce1-108.sentinelone.net/" target="_blank">SentinelOne</a>
+<a href="https://10.140.222.26/" target="_blank">OctoXLabs</a>
+</div>
+</div>
+
+<div class="dropdown">
+<div class="btn darkgray">Vodofone</div>
+<div class="dropdown-content">
+<a href="https://verimerkezi.yarinahazir.com/login/?service=tenant:efinans&redirectTo=%2Ftenant%2Fefinans" target="_blank">Veri Merkezi</a>
+<a href="https://46.221.23.136/admin_ui/mas/ent/login.html" target="_blank">Netscaler</a>
+</div>
+</div>
+
+<a href="https://gitlab.efinans.com.tr/users/sign_in" target="_blank" class="btn crimson">GitLab</a>
+<a href="http://sonarqube.qnbesolutions.com.tr" target="_blank" class="btn purple">Sonarqube</a>
+<a href="https://connect.qnbesolutions.com.tr/" target="_blank" class="btn brown">Sechard</a>
+<a href="https://repo.qnbesolutions.com.tr/" target="_blank" class="btn orange">Nexus</a>
+<a href="https://efinsan.qnbefinans.com/Login/Login" target="_blank" class="btn blue">QES İnsan Kaynakları</a>
+<a href="https://uk.epm.cyberark.com/" target="_blank" class="btn darkgray">CyberArk</a>
+<a href="https://sdlc.ibtech.com.tr/" target="_blank" class="btn green">Frontline</a>
+<a href="https://www.finarmoni.com.tr/" target="_blank" class="btn red">Finarmoni</a>
+<a href="http://10.140.50.61:30900/" target="_blank" class="btn brown">Graylog</a>
+<a href="https://esos.lightning.force.com/" target="_blank" class="btn blue">Salesforce</a>
+
 </div>
 
 </body>
